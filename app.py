@@ -43,7 +43,15 @@ if recognized_text:
     translated = translate_text(recognized_text, language)
 
     st.subheader("🌍 Translation")
-    st.write(translated)
+    #st.write(translated)
+    st.markdown(
+    f"""
+    <div style='height:200px; overflow-y: scroll; border:1px solid gray; padding:10px'>
+    {translated}
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
     pdf_file = generate_pdf(translated)
 
