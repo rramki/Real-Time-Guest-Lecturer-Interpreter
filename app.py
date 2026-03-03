@@ -31,10 +31,10 @@ if mode == "Upload Audio":
 elif mode == "Live Recording":
     if st.button("Start Recording"):
         recognizer = sr.Recognizer()
-        with sr.Microphone() as source:
-            st.write("Listening...")
-            audio_data = recognizer.listen(source)
-            recognized_text = recognizer.recognize_google(audio_data)
+        #with sr.Microphone() as source:
+        st.write("Listening...")
+        audio_data = recognizer.listen(source)
+        recognized_text = recognizer.recognize_google(audio_data)
 
 if recognized_text:
     st.subheader("📝 Transcription")
